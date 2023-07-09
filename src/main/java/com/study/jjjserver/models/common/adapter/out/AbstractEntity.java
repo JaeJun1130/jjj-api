@@ -1,4 +1,4 @@
-package com.study.jjjserver.common.adapter.out;
+package com.study.jjjserver.models.common.adapter.out;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

@@ -1,6 +1,6 @@
 package com.study.jjjserver.models.user.adapter.out.persistence.entity;
 
-import com.study.jjjserver.common.adapter.out.AbstractDateEntity;
+import com.study.jjjserver.models.common.adapter.out.AbstractDateEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Getter;

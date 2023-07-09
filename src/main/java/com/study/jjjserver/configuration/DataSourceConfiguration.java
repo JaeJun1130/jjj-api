@@ -1,6 +1,6 @@
-package com.study.jjjserver.config;
+package com.study.jjjserver.configuration;
 
-import com.study.jjjserver.config.properties.DataSourceProperties;
+import com.study.jjjserver.configuration.properties.DataSourceProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

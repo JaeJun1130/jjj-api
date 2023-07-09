@@ -1,4 +1,4 @@
-package com.study.jjjserver.config.properties;
+package com.study.jjjserver.configuration.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
