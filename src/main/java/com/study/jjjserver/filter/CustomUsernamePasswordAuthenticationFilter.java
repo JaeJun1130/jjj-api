@@ -9,9 +9,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 @RequiredArgsConstructor
 public class CustomUsernamePasswordAuthenticationFilter extends OncePerRequestFilter {
@@ -21,14 +24,13 @@ public class CustomUsernamePasswordAuthenticationFilter extends OncePerRequestFi
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("request = " + request.getParameter("username"));
+        InputStream inputStream = request.getInputStream();
+        String body = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
+
+        System.out.println("body = " + body);
     }
 
     private String resolveToken(HttpServletRequest request) {
-        return null;
-    }
-
-    private UserLoginInfo getUserLoginInfo(HttpServletRequest request) throws IOException {
         return null;
     }
 }
