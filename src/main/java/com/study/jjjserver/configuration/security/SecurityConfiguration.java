@@ -19,7 +19,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain issueTokenFilterChain(HttpSecurity http) throws Exception {
         return http
-                .securityMatcher("/auth/token")
+                .securityMatcher("/issue/token")
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
                 .csrf(Customizer.withDefaults())
