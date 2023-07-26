@@ -1,13 +1,11 @@
 package com.study.jjjserver.configuration.security.token;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
-import java.util.Collection;
-
-public class JwtAuthenticationToken extends AbstractAuthenticationToken {
-    public JwtAuthenticationToken(Collection<? extends GrantedAuthority> authorities) {
-        super(authorities);
+public class CustomAuthenticationToken extends AbstractAuthenticationToken {
+    public CustomAuthenticationToken() {
+        super(null); //
     }
 
     @Override

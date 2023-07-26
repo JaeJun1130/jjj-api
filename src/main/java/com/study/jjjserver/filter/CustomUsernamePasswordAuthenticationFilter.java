@@ -1,5 +1,6 @@
 package com.study.jjjserver.filter;
 
+import com.study.jjjserver.configuration.security.token.CustomAuthenticationToken;
 import com.study.jjjserver.configuration.security.token.data.UserLoginInfo;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -7,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.util.StreamUtils;
@@ -28,6 +30,8 @@ public class CustomUsernamePasswordAuthenticationFilter extends OncePerRequestFi
         String body = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
 
         System.out.println("body = " + body);
+
+        Authentication authenticate = authenticationManager.authenticate(new CustomAuthenticationToken());
     }
 
     private String resolveToken(HttpServletRequest request) {
